@@ -47,3 +47,30 @@ static string Isletter(string secretword, List<string> letterGuessed)
     return correctletters;
 }
 
+static void GetAlphabet(string letters)
+{
+    List<string> alphabet = new List<string>();
+
+    for (int i = 1; i <= 26; i++)
+    {
+        char broski = Convert.ToChar(i + 96);
+        alphabet.Add(Convert.ToString(broski));
+    }
+    int num = 49;
+    Console.ForegroundColor = ConsoleColor.Magenta;
+    Console.WriteLine("Letters Left are --->");
+
+    for (int i = 0; i < num; i++)
+    {
+        if (letters.Contains(letters))
+        {
+            alphabet.Remove(letters);
+            num -= 1;
+        }
+        Console.Write("[" + alphabet[i] + "] ");
+    }
+
+    Console.WriteLine();
+
+}
+
